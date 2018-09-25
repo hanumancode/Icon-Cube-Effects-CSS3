@@ -12,6 +12,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    border-radius: 50%;
+
 }
 
 .container ul li {
@@ -21,9 +23,91 @@ body {
 }
 
 .container ul li a {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: block;
     transition: 0.5s;
-    background: #eee;
+    background: #333;
+    padding: 20px;
+}
+
+.container li a span {
+    width: 100%;
+    height: 100%;
+}
+
+.container ul li a span:before {
+    font-family: fontAwesome;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #333;
+    transform-origin: top;
+    transition: transform 0.5s;
+    text-align: center;
+} 
+
+.container ul li:hover a span:before {
+    transform: rotateX(90deg) translateY(-50%);
+}
+
+.container ul li a span:after {
+    font-family: fontAwesome;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    text-align: center;
+    transform: rotateX(90deg) translateY(50%);
+} 
+
+.container ul li:nth-child(1) a span:after {
+    background: #8a3ab9;
+}
+.container ul li:nth-child(2) a span:after {
+    background: #3B5998;
+}
+.container ul li:nth-child(3) a span:after {
+    background: #0084b4;
+}
+.container ul li:nth-child(4) a span:after {
+    background: #0077B5;
+}
+.container ul li:nth-child(5) a span:after {
+    background: #3cba54;
+}
+
+.container ul li:hover a span:after {
+    transform: rotateX(0deg) translateY(0%);
+}
+
+ul li:nth-child(1) a span:before,
+ul li:nth-child(1) a span:after {
+    content: '\f16d';
+}
+ul li:nth-child(2) a span:before,
+ul li:nth-child(2) a span:after {
+    content: '\f09a';
+}
+ul li:nth-child(3) a span:before,
+ul li:nth-child(3) a span:after {
+    content: '\f099';
+}
+ul li:nth-child(4) a span:before,
+ul li:nth-child(4) a span:after {
+    content: '\f0e1';
+}
+ul li:nth-child(5) a span:before,
+ul li:nth-child(5) a span:after {
+    content: '\f0d5';
 }
